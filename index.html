@@ -48,12 +48,6 @@
         .check-item strong { color: #0a2a5c; font-size: 14px; }
         .check-item span { color: #4b5563; font-size: 14px; }
         
-        /* ===== SERVICE CARDS ===== */
-        .service-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; text-align: center; display: flex; flex-direction: column; align-items: center; }
-        .service-card .support-icon-svg { width: 44px; height: 44px; fill: none; stroke: #0a4c9b; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; margin: 0 auto 6px; display: block; }
-        .service-card h3 { font-weight: 600; color: #0a2a5c; font-size: 14px; }
-        .service-card p { color: #6b7280; font-size: 13px; margin-top: 3px; line-height: 1.4; }
-        
         /* ===== DISCLAIMER ===== */
         .disclaimer-box { background: #fef2f2; border-left: 4px solid #dc2626; padding: 14px 16px; border-radius: 8px; font-size: 12px; color: #4b5563; line-height: 1.7; }
         .disclaimer-box strong { color: #991b1b; }
@@ -64,7 +58,6 @@
         /* ===== CTA BUTTON ===== */
         .cta-btn { display: inline-block; background: #f5a623; color: #0a2a5c; font-weight: 700; font-size: 17px; padding: 13px 28px; border-radius: 12px; text-decoration: none; text-align: center; width: 100%; max-width: 320px; }
         .cta-btn:hover { background: #d98e1a; }
-        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
         
         /* ===== FAQ ===== */
         .faq-item { border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 16px; margin-bottom: 8px; cursor: pointer; transition: all 0.3s; }
@@ -76,11 +69,119 @@
         .faq-item .question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #1f2937; }
         .faq-item .question span { font-size: 15px; }
         
+        /* ========================================================= */
+        /* ===== SUPPORT SERVICES - EXACT SAME AS YOUR 2ND CODE ===== */
+        /* ========================================================= */
+        .support-section {
+            background: white;
+            padding: 32px 0;
+        }
+        .support-section .support-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+        .support-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        /* Icon Style - 100% same blue jaisa image mein hai */
+        .support-item .support-icon-svg {
+            width: 40px;
+            height: 40px;
+            fill: none;
+            stroke: #0a4c9b; /* Exact dark blue from your code */
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .support-item .support-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .support-item .item-heading {
+            font-weight: 700;
+            font-size: 14px;
+            color: #000000;
+        }
+        .support-item .item-desc {
+            font-size: 13px;
+            color: #4b5563;
+            line-height: 1.4;
+        }
+        
+        /* ========================================================= */
+        /* ===== FIXED STICKY FOOTER - EXACT AS YOUR 2ND CODE ===== */
+        /* ========================================================= */
+        .bottom-call {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0a2a5c;
+            padding: 14px 20px 6px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            border-top: none;
+        }
+        .bottom-call .inner {
+            max-width: 480px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .bottom-call .call-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .bottom-call .call-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .bottom-call .call-number:hover { color: #f5a623; }
+        .bottom-call .arrow {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 300;
+        }
+        
+        /* ===== TAP TO CALL TEXT ===== */
+        .bottom-call .tap-text {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 11px;
+            padding-top: 4px;
+            padding-bottom: 2px;
+            letter-spacing: 0.3px;
+        }
+        
         /* ============================================================ */
-        /* ===== DESKTOP VERSION (Default - Large Screens) ===== */
+        /* ===== DESKTOP VERSION (Hidden on Mobile) ===== */
         /* ============================================================ */
         
-        /* Desktop Header */
+        .desktop-only { display: none; }
+        
+        @media (min-width: 769px) {
+            .desktop-only { display: block !important; }
+            .mobile-only { display: none !important; }
+        }
+        
+        /* Desktop Styles */
         .desktop-header { display: flex; background: #0a2a5c; color: white; padding: 0 2rem; height: 80px; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .desktop-header .logo { display: flex; align-items: center; gap: 8px; font-size: 24px; font-weight: 700; text-decoration: none; color: white; }
         .desktop-header .logo .xm-box { background: #f5a623; color: #0a2a5c; width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; }
@@ -90,7 +191,6 @@
         .desktop-header .phone-btn { display: flex; align-items: center; gap: 8px; background: #f5a623; color: #0a2a5c; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: background 0.3s; }
         .desktop-header .phone-btn:hover { background: #d98e1a; }
         
-        /* Desktop Hero */
         .desktop-hero { background: linear-gradient(135deg, #0a2a5c 0%, #1a3a6c 100%); padding: 80px 2rem; color: white; }
         .desktop-hero .inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
         .desktop-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
@@ -101,8 +201,6 @@
         .desktop-hero .call-btn { display: inline-flex; align-items: center; gap: 10px; background: #f5a623; color: #0a2a5c; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 12px; text-decoration: none; transition: background 0.3s; }
         .desktop-hero .call-btn:hover { background: #d98e1a; }
         .desktop-hero .call-btn svg { width: 24px; height: 24px; }
-        
-        /* Desktop Hero Cards */
         .desktop-hero-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .desktop-hero-cards .card { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); padding: 24px; border-radius: 12px; transition: background 0.3s; }
         .desktop-hero-cards .card:hover { background: rgba(255,255,255,0.2); }
@@ -110,7 +208,6 @@
         .desktop-hero-cards .card h3 { font-weight: 600; font-size: 18px; margin-bottom: 4px; }
         .desktop-hero-cards .card p { color: rgba(255,255,255,0.7); font-size: 14px; }
         
-        /* Desktop Features */
         .desktop-features { padding: 64px 2rem; background: white; }
         .desktop-features .inner { max-width: 1200px; margin: 0 auto; }
         .desktop-features h2 { font-size: 36px; font-weight: 700; color: #0a2a5c; text-align: center; margin-bottom: 8px; }
@@ -122,7 +219,6 @@
         .desktop-features .card h3 { font-weight: 700; color: #0a2a5c; font-size: 18px; margin-bottom: 4px; }
         .desktop-features .card p { color: #6b7280; font-size: 15px; }
         
-        /* Desktop Steps */
         .desktop-steps { padding: 64px 2rem; background: #f9fafb; }
         .desktop-steps .inner { max-width: 1200px; margin: 0 auto; }
         .desktop-steps h2 { font-size: 36px; font-weight: 700; color: #0a2a5c; text-align: center; margin-bottom: 8px; }
@@ -134,13 +230,11 @@
         .desktop-steps .step p { color: #6b7280; font-size: 14px; line-height: 1.4; }
         .desktop-steps .help-text { text-align: center; margin-top: 24px; color: #6b7280; }
         
-        /* Desktop FAQ */
         .desktop-faq { padding: 64px 2rem; background: white; }
         .desktop-faq .inner { max-width: 800px; margin: 0 auto; }
         .desktop-faq h2 { font-size: 36px; font-weight: 700; color: #0a2a5c; text-align: center; margin-bottom: 8px; }
         .desktop-faq .sub { color: #6b7280; font-size: 18px; text-align: center; margin-bottom: 32px; }
         
-        /* Desktop CTA */
         .desktop-cta { padding: 64px 2rem; background: linear-gradient(135deg, #0a2a5c 0%, #1a3a6c 100%); text-align: center; color: white; }
         .desktop-cta .inner { max-width: 800px; margin: 0 auto; }
         .desktop-cta h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; }
@@ -149,7 +243,6 @@
         .desktop-cta .btn:hover { background: #d98e1a; }
         .desktop-cta .note { color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 16px; }
         
-        /* Desktop Footer */
         .desktop-footer { background: #111827; color: #9ca3af; padding: 48px 2rem 24px; }
         .desktop-footer .inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; }
         .desktop-footer h4 { color: white; font-weight: 700; font-size: 14px; margin-bottom: 16px; }
@@ -165,7 +258,7 @@
         /* ===== MOBILE VERSION (Hidden on Desktop) ===== */
         /* ============================================================ */
         
-        .mobile-only { display: none; }
+        .mobile-only { display: block; }
         
         /* Mobile Hero */
         .mobile-hero { background: linear-gradient(135deg, #0a2a5c 0%, #1a3a6c 100%); padding: 40px 20px 35px; text-align: center; }
@@ -179,33 +272,13 @@
         .mobile-disclaimer { padding: 24px 16px; background: #f9fafb; }
         .mobile-disclaimer .container { max-width: 480px; margin: 0 auto; }
         
-        /* ============================================================ */
-        /* ===== MEDIA QUERIES ===== */
-        /* ============================================================ */
-        
-        /* Show Mobile, Hide Desktop on small screens */
+        /* Responsive for Mobile Layout */
+        @media (min-width: 769px) {
+            .mobile-only { display: none !important; }
+        }
         @media (max-width: 768px) {
             .desktop-only { display: none !important; }
-            .mobile-only { display: block !important; }
-            .mobile-only-flex { display: flex !important; }
-            .grid-3 { grid-template-columns: 1fr; }
         }
-        
-        /* Show Desktop, Hide Mobile on large screens */
-        @media (min-width: 769px) {
-            .desktop-only { display: block !important; }
-            .desktop-only-flex { display: flex !important; }
-            .mobile-only { display: none !important; }
-            .mobile-only-flex { display: none !important; }
-            .desktop-features .grid { grid-template-columns: repeat(3, 1fr); }
-            .desktop-steps .grid { grid-template-columns: repeat(5, 1fr); }
-            .desktop-footer .inner { grid-template-columns: 1fr 1fr 1fr 1fr; }
-        }
-        
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .desktop-steps .grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        
         @media (max-width: 480px) {
             .mobile-hero h1 { font-size: 22px; }
             .mobile-hero .call-btn { font-size: 16px; padding: 12px 16px; }
@@ -213,7 +286,12 @@
             .section-title { font-size: 18px; }
             .step-card { padding: 12px 14px; }
             .step-number { width: 28px; height: 28px; font-size: 13px; }
-            .service-card .support-icon-svg { width: 36px; height: 36px; }
+            .bottom-call .call-number { font-size: 16px; }
+            .bottom-call .call-label { font-size: 13px; }
+            .bottom-call { padding: 12px 16px 4px 16px; }
+            .bottom-call .tap-text { font-size: 10px; }
+            .support-item { padding: 14px 16px; }
+            .support-item .support-icon-svg { width: 32px; height: 32px; }
         }
     </style>
 </head>
@@ -225,7 +303,6 @@
     
     <div class="desktop-only">
         
-        <!-- DESKTOP HEADER -->
         <header class="desktop-header">
             <a href="#" class="logo">
                 <span class="xm-box">XM</span>
@@ -243,25 +320,15 @@
             </a>
         </header>
 
-        <!-- DESKTOP HERO -->
         <section class="desktop-hero">
             <div class="inner">
                 <div>
                     <h1>Activate Your Sirius XM Today</h1>
                     <p class="sub">Professional activation, installation, and technical support for your satellite radio service</p>
                     <div class="points">
-                        <div class="point">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            Fast &amp; Easy Activation
-                        </div>
-                        <div class="point">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            Expert Installation Guidance
-                        </div>
-                        <div class="point">
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            24/7 Customer Support
-                        </div>
+                        <div class="point"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Fast &amp; Easy Activation</div>
+                        <div class="point"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Expert Installation Guidance</div>
+                        <div class="point"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 24/7 Customer Support</div>
                     </div>
                     <a href="tel:+14067474507" class="call-btn">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
@@ -269,34 +336,14 @@
                     </a>
                 </div>
                 <div class="desktop-hero-cards">
-                    <div class="card">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
-                        <h3>1000+ Channels</h3>
-                        <p>Music, sports, talk &amp; more</p>
-                    </div>
-                    <div class="card">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                        <h3>Easy Setup</h3>
-                        <p>Activation in minutes</p>
-                    </div>
-                    <div class="card">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 010-7.072m-2.828 9.9a9 9 0 010-12.728"/></svg>
-                        <h3>No Ads*</h3>
-                        <p>Most music channels commercial-free</p>
-                    </div>
-                    <div class="card">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        <h3>Expert Help</h3>
-                        <p>Professional support team ready</p>
-                    </div>
+                    <div class="card"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg><h3>1000+ Channels</h3><p>Music, sports, talk &amp; more</p></div>
+                    <div class="card"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><h3>Easy Setup</h3><p>Activation in minutes</p></div>
+                    <div class="card"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 010-7.072m-2.828 9.9a9 9 0 010-12.728"/></svg><h3>No Ads*</h3><p>Most music channels commercial-free</p></div>
+                    <div class="card"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg><h3>Expert Help</h3><p>Professional support team ready</p></div>
                 </div>
-            </div>
-            <div style="max-width:1200px;margin:32px auto 0;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);border-radius:8px;">
-                <p style="font-size:12px;color:rgba(255,255,255,0.6);"><strong>Disclaimer:</strong> XM Radio is an independent third-party service provider. We are not affiliated with or endorsed by Sirius XM Inc. We provide activation and support services only. Sirius XM® is a registered trademark of Sirius XM Holdings Inc.</p>
             </div>
         </section>
 
-        <!-- DESKTOP FEATURES -->
         <section id="desktop-features" class="desktop-features">
             <div class="inner">
                 <h2>What Sirius XM Offers</h2>
@@ -312,7 +359,6 @@
             </div>
         </section>
 
-        <!-- DESKTOP STEPS -->
         <section id="desktop-how-it-works" class="desktop-steps">
             <div class="inner">
                 <h2>How to Activate Your Sirius XM</h2>
@@ -328,41 +374,21 @@
             </div>
         </section>
 
-        <!-- DESKTOP FAQ -->
         <section id="desktop-faq" class="desktop-faq">
             <div class="inner">
                 <h2>Frequently Asked Questions</h2>
                 <p class="sub">Find answers to common questions about Sirius XM activation and service</p>
                 <div>
-                    <div class="faq-item" onclick="toggleFAQ(this)">
-                        <div class="question"><span>What is Sirius XM?</span><span class="chevron">▼</span></div>
-                        <div class="answer">Sirius XM is a satellite radio service offering hundreds of channels of music, sports, news, talk, and entertainment across North America.</div>
-                    </div>
-                    <div class="faq-item" onclick="toggleFAQ(this)">
-                        <div class="question"><span>How do I activate my service?</span><span class="chevron">▼</span></div>
-                        <div class="answer">Call us at +1 (406) 747-4507 with your Radio ID. Our experts will guide you through the quick activation process.</div>
-                    </div>
-                    <div class="faq-item" onclick="toggleFAQ(this)">
-                        <div class="question"><span>What equipment do I need?</span><span class="chevron">▼</span></div>
-                        <div class="answer">You need a Sirius XM-compatible receiver or in-car radio system, a power source, and an antenna with clear reception.</div>
-                    </div>
-                    <div class="faq-item" onclick="toggleFAQ(this)">
-                        <div class="question"><span>Is there a subscription fee?</span><span class="chevron">▼</span></div>
-                        <div class="answer">Yes, Sirius XM requires a subscription. We can help you choose the best plan for your listening needs.</div>
-                    </div>
-                    <div class="faq-item" onclick="toggleFAQ(this)">
-                        <div class="question"><span>Can I activate online?</span><span class="chevron">▼</span></div>
-                        <div class="answer">Yes, but for personalized assistance and troubleshooting, we recommend calling our experts at +1 (406) 747-4507.</div>
-                    </div>
-                    <div class="faq-item" onclick="toggleFAQ(this)">
-                        <div class="question"><span>What areas are covered?</span><span class="chevron">▼</span></div>
-                        <div class="answer">Sirius XM covers the entire continental US, Canada, and parts of Mexico. Coverage may vary in remote areas.</div>
-                    </div>
+                    <div class="faq-item" onclick="toggleFAQ(this)"><div class="question"><span>What is Sirius XM?</span><span class="chevron">▼</span></div><div class="answer">Sirius XM is a satellite radio service offering hundreds of channels of music, sports, news, talk, and entertainment across North America.</div></div>
+                    <div class="faq-item" onclick="toggleFAQ(this)"><div class="question"><span>How do I activate my service?</span><span class="chevron">▼</span></div><div class="answer">Call us at +1 (406) 747-4507 with your Radio ID. Our experts will guide you through the quick activation process.</div></div>
+                    <div class="faq-item" onclick="toggleFAQ(this)"><div class="question"><span>What equipment do I need?</span><span class="chevron">▼</span></div><div class="answer">You need a Sirius XM-compatible receiver or in-car radio system, a power source, and an antenna with clear reception.</div></div>
+                    <div class="faq-item" onclick="toggleFAQ(this)"><div class="question"><span>Is there a subscription fee?</span><span class="chevron">▼</span></div><div class="answer">Yes, Sirius XM requires a subscription. We can help you choose the best plan for your listening needs.</div></div>
+                    <div class="faq-item" onclick="toggleFAQ(this)"><div class="question"><span>Can I activate online?</span><span class="chevron">▼</span></div><div class="answer">Yes, but for personalized assistance and troubleshooting, we recommend calling our experts at +1 (406) 747-4507.</div></div>
+                    <div class="faq-item" onclick="toggleFAQ(this)"><div class="question"><span>What areas are covered?</span><span class="chevron">▼</span></div><div class="answer">Sirius XM covers the entire continental US, Canada, and parts of Mexico. Coverage may vary in remote areas.</div></div>
                 </div>
             </div>
         </section>
 
-        <!-- DESKTOP CTA -->
         <section class="desktop-cta">
             <div class="inner">
                 <h2>Ready to Activate Your Sirius XM?</h2>
@@ -372,74 +398,35 @@
             </div>
         </section>
 
-        <!-- DESKTOP FOOTER -->
         <footer class="desktop-footer">
             <div class="inner">
-                <div>
-                    <h4>XM Radio Services</h4>
-                    <p style="color:#9ca3af;font-size:14px;line-height:1.6;">Professional Sirius XM activation, installation, and support services.</p>
-                    <p style="margin-top:8px;font-size:14px;color:#9ca3af;"><strong style="color:white;">📍 Address:</strong> 868 Aztec Dr, Martinsburg, WV 25405</p>
-                    <p style="font-size:14px;color:#9ca3af;"><strong style="color:white;">📞 Call:</strong> <a href="tel:+14067474507" style="color:#f5a623;text-decoration:none;">+1 (406) 747-4507</a></p>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#desktop-features">Features</a></li>
-                        <li><a href="#desktop-how-it-works">How It Works</a></li>
-                        <li><a href="#desktop-faq">FAQs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="cookies.html">Cookie Policy</a></li>
-                        <li><a href="dmca.html">DMCA &amp; Copyright</a></li>
-                        <li><a href="disclaimer.html">Disclaimer</a></li>
-                        <li><a href="ads-disclosure.html">Ads Disclosure</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Support</h4>
-                    <p style="color:#9ca3af;font-size:14px;">Available 24/7</p>
-                    <p style="color:#9ca3af;font-size:14px;line-height:1.6;margin-top:4px;">Our expert team is ready to help with activation, installation, and technical support.</p>
-                    <a href="tel:+14067474507" style="display:inline-block;margin-top:12px;background:#f5a623;color:#0a2a5c;font-weight:700;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:14px;">Call Support</a>
-                </div>
-            </div>
-            <div class="bottom">
-                <p>© 2026 XM Radio. All rights reserved.</p>
-                <p class="disc"><strong>Disclaimer:</strong> XM Radio is a third-party service provider and is not affiliated with, endorsed by, or connected to Sirius XM Inc.</p>
+                <div><h4>XM Radio Services</h4><p style="color:#9ca3af;font-size:14px;line-height:1.6;">Professional Sirius XM activation, installation, and support services.</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="#">Home</a></li><li><a href="#desktop-features">Features</a></li><li><a href="#desktop-how-it-works">How It Works</a></li><li><a href="#desktop-faq">FAQs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div><h4>Legal</h4><ul><li><a href="terms.html">Terms of Service</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="cookies.html">Cookie Policy</a></li><li><a href="dmca.html">DMCA &amp; Copyright</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="ads-disclosure.html">Ads Disclosure</a></li></ul></div>
+                <div><h4>Support</h4><p style="color:#9ca3af;font-size:14px;">Available 24/7</p><p style="color:#9ca3af;font-size:14px;line-height:1.6;margin-top:4px;">Our expert team is ready to help with activation, installation, and technical support.</p></div>
             </div>
         </footer>
         
     </div>
-    <!-- ===== END DESKTOP VERSION ===== -->
-
 
     <!-- ============================================================ -->
-    <!-- ===== MOBILE VERSION (Hidden on Desktop) ===== -->
+    <!-- ===== MOBILE VERSION (EXACTLY AS YOUR 2ND CODE) ===== -->
     <!-- ============================================================ -->
     
     <div class="mobile-only">
 
-        <!-- MOBILE HERO -->
         <section class="mobile-hero">
             <div>
                 <h1>Sirius XM Activation Made Easy</h1>
-                <p class="sub">Expert activation, setup &amp; guidance for your satellite radio</p>
+                <p class="sub">Expert activation, installation &amp; support for your satellite radio</p>
                 <a href="tel:+14067474507" class="call-btn">📞 CALL NOW: +1 (406) 747-4507</a>
                 <p class="availability">Available 24/7 for your convenience</p>
             </div>
         </section>
 
-        <!-- MOBILE STEPS -->
         <section class="section-pad bg-white">
             <div class="container">
                 <h2 class="section-title">How to Activate Your Sirius XM</h2>
-                <p class="section-sub">Simple steps to get your satellite radio up and running</p>
                 <div>
                     <div class="step-card"><div class="step-number">1</div><div><h3>Get Your Activation Code</h3><p>Check your Sirius XM welcome package or email for your unique activation code</p></div></div>
                     <div class="step-card"><div class="step-number">2</div><div><h3>Turn On Your Radio</h3><p>Power on your Sirius XM receiver and wait for the activation prompt</p></div></div>
@@ -447,17 +434,15 @@
                     <div class="step-card"><div class="step-number">4</div><div><h3>Enjoy Your Service</h3><p>Start listening to your favorite Sirius XM channels immediately</p></div></div>
                 </div>
                 <div class="mt-4 text-center">
-                    <p style="color:#4b5563;font-size:14px;margin-bottom:10px;">Having trouble? Our experts can help you activate over the phone.</p>
-                    <a href="tel:+14067474507" class="cta-btn">📞 Get Activation Help</a>
+                    <p style="color: #4b5563; font-size: 14px; margin-bottom: 10px;">Having trouble? Our experts can help you activate over the phone.</p>
+                    <a href="tel:+14067474507" class="cta-btn">Get Activation Help</a>
                 </div>
             </div>
         </section>
 
-        <!-- MOBILE INSTALLATION -->
         <section class="section-pad bg-gray-50">
             <div class="container">
                 <h2 class="section-title">Installation Requirements</h2>
-                <p class="section-sub">What you need to get started</p>
                 <div class="bg-white border rounded-2xl p-4">
                     <div>
                         <div class="check-item"><span class="check">✅</span><div><strong>Compatible Device:</strong> <span>Sirius XM receiver or in-car radio system</span></div></div>
@@ -466,94 +451,96 @@
                         <div class="check-item"><span class="check">✅</span><div><strong>Active Subscription:</strong> <span>Valid Sirius XM account or subscription</span></div></div>
                     </div>
                     <div class="mt-3 p-3 bg-blue-50 rounded-xl border border-blue-200" style="font-size:13px;color:#374151;line-height:1.6;">
-                        <strong>Professional Setup Available:</strong> If you need assistance with physical setup, our team can guide you through the process or recommend professional technicians in your area.
+                        <strong>Professional Installation Available:</strong> If you need assistance with physical installation, our support team can guide you through the process or recommend professional technicians in your area.
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MOBILE SUPPORT (UPDATED WITH EXACT BLUE ICONS) -->
-        <section class="section-pad bg-white">
+        <!-- ========================================================= -->
+        <!-- ===== MOBILE SUPPORT SERVICES - EXACT 3 ICONS (VERTICAL) ==== -->
+        <!-- ========================================================= -->
+        <section class="support-section">
             <div class="container">
-                <h2 class="section-title">Support Services Available</h2>
-                <p class="section-sub">Expert help whenever you need it</p>
+                <h2 class="support-title">Support Services Available</h2>
                 
-                <div class="grid-3">
-                    
-                    <!-- 1. HEADPHONE ICON -->
-                    <div class="service-card">
-                        <svg class="support-icon-svg" viewBox="0 0 24 24">
-                            <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"></path>
-                            <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-                        </svg>
-                        <h3>Phone Support</h3>
-                        <p>Speak directly with our activation experts 24/7</p>
+                <!-- 1. PHONE SUPPORT - HEADPHONE ICON -->
+                <div class="support-item">
+                    <svg class="support-icon-svg" viewBox="0 0 24 24">
+                        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"></path>
+                        <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                    </svg>
+                    <div class="support-text">
+                        <span class="item-heading">Phone Support</span>
+                        <span class="item-desc">Speak directly with our activation experts 24/7</span>
                     </div>
-                    
-                    <!-- 2. CHECK / TICK CIRCLE ICON -->
-                    <div class="service-card">
-                        <svg class="support-icon-svg" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="8 12 11 15 16 9"></polyline>
-                        </svg>
-                        <h3>Activation Assistance</h3>
-                        <p>Step-by-step guidance through the entire activation process</p>
+                </div>
+                
+                <!-- 2. ACTIVATION ASSISTANCE - CHECK CIRCLE ICON -->
+                <div class="support-item">
+                    <svg class="support-icon-svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="8 12 11 15 16 9"></polyline>
+                    </svg>
+                    <div class="support-text">
+                        <span class="item-heading">Activation Assistance</span>
+                        <span class="item-desc">Step-by-step guidance through the entire activation process</span>
                     </div>
-                    
-                    <!-- 3. ALERT / EXCLAMATION CIRCLE ICON -->
-                    <div class="service-card">
-                        <svg class="support-icon-svg" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                        </svg>
-                        <h3>Troubleshooting</h3>
-                        <p>Quick fixes for common activation and signal issues</p>
+                </div>
+                
+                <!-- 3. TROUBLESHOOTING - ALERT (EXCLAMATION) CIRCLE ICON -->
+                <div class="support-item">
+                    <svg class="support-icon-svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <div class="support-text">
+                        <span class="item-heading">Troubleshooting</span>
+                        <span class="item-desc">Quick fixes for common activation and signal issues</span>
                     </div>
-                    
                 </div>
             </div>
         </section>
 
-        <!-- MOBILE DISCLAIMER + CTA -->
-        <section class="section-pad-sm bg-gray-50">
+        <!-- ===== DISCLAIMER + OFFICIAL BOX ===== -->
+        <section class="section-pad-sm bg-gray-50" style="padding-bottom: 100px;">
             <div class="container">
                 <div class="disclaimer-box">
-                    <p><strong>Important Disclaimer:</strong> XM Radio is an independent third-party service provider. We are not affiliated with, endorsed by, or connected to Sirius XM Inc. or any of its parent companies. We provide activation assistance, setup guidance, and support services only. Sirius XM is a registered trademark of Sirius XM Holdings Inc. Our services are provided as-is, and we cannot guarantee activation success or service quality from Sirius XM.</p>
+                    <p><strong>Important Disclaimer:</strong> XM Radio is an independent third-party service provider. We are not affiliated with, endorsed by, or connected to Sirius XM Inc. or any of its parent companies. We provide activation assistance, installation guidance, and technical support services only. Sirius XM is a registered trademark of Sirius XM Holdings Inc. Our services are provided as-is, and we cannot guarantee activation success or service quality from Sirius XM.</p>
                 </div>
+                
                 <div class="official-box mt-3">
                     <p>For official Sirius XM customer support, please visit <a href="https://www.sirius.com" target="_blank">sirius.com</a> or call Sirius XM directly at <a href="tel:+18885397474">1-888-539-7474</a>.</p>
                 </div>
-                <div class="text-center mt-4">
+
+                <div class="bottom-cta-text mt-4">
                     <a href="tel:+14067474507" class="cta-btn">📞 CALL: +1 (406) 747-4507</a>
-                    <p style="color:#9ca3af;font-size:13px;margin-top:8px;">Tap to call - Free and available now</p>
+                    <p>Tap to call - Free and available now</p>
                 </div>
             </div>
         </section>
         
-        <!-- MOBILE - NO FOOTER -->
-        
     </div>
-    <!-- ===== END MOBILE VERSION ===== -->
-
 
     <!-- ============================================================ -->
+    <!-- ===== EXACT SAME STICKY FOOTER (ALWAYS VISIBLE ON MOBILE) ===== -->
+    <!-- ============================================================ -->
+    <div class="bottom-call mobile-only-flex" style="display: flex;">
+        <div class="inner">
+            <span class="call-label">📞 CALL:</span>
+            <a href="tel:+14067474507" class="call-number">+1 (406) 747-4507</a>
+            <span class="arrow">›</span>
+        </div>
+        <div class="tap-text">Tap to call - Free and available now</div>
+    </div>
+
     <!-- ===== JAVASCRIPT ===== -->
-    <!-- ============================================================ -->
-    
     <script>
-        // FAQ Toggle
         function toggleFAQ(el) {
             el.classList.toggle('open');
         }
-        
-        // Close FAQ when clicking outside (optional)
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.faq-item')) {
-                // Don't close automatically - user should click to toggle
-            }
-        });
     </script>
 
 </body>
